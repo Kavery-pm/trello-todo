@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { initialState } from '../Store/sliceConfig'
+import { initialState } from '../store/sliceConfig'
 
 const { background1, background2, glassColor, color, opacity } = initialState
 
