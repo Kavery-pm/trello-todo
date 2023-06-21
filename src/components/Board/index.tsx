@@ -1,6 +1,6 @@
-import { DragDropContext } from 'react-beautiful-dnd';
 
 
+import { Container } from './styles'
 export const Board = () => {
  
 
@@ -10,7 +10,9 @@ export const Board = () => {
 
   return (
   <>
-  <h1>box</h1>
+ <Container>
+    <h1>hi</h1>
+ </Container>
   </>
   )
 }
