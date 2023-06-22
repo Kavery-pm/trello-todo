@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { useDispatch } from 'react-redux'
 import { addNewItem } from '../../store/sliceLists'
-
+import { newItemModal } from '../../store/sliceModals'
 
 import { Container, Box, Body, Buttons } from './styles'
 import { FaArrowLeft, FaPlus } from 'react-icons/fa'
@@ -13,7 +13,9 @@ export const NewItemModal = () => {
 
   const dispatch = useDispatch()
 
-  
+  const closeNewItemModal = () => {
+    dispatch(newItemModal())
+  }
 
   const handleNewItem = (e: any) => {
     setValue(e.target.value)
@@ -22,7 +24,7 @@ export const NewItemModal = () => {
   const addNewItemFunction = (index: number) => {
     if (value) {
       dispatch(addNewItem({ value, index }))
-      // closeNewItemModal()
+      closeNewItemModal()
     }
   }
 
@@ -36,7 +38,7 @@ export const NewItemModal = () => {
     <Container>
       <Box>
         <header>
-          <button >
+          <button onClick={closeNewItemModal}>
             <FaArrowLeft size={20} />
           </button>
           <h1>add a new item</h1>
