@@ -1,21 +1,36 @@
-
-import './App.css'
 import { Board } from './components/Board'
-import Global from './styles/global'
 import { NewItemModal } from './components/NewItemModal'
+import { EditModal } from './components/EditModal'
 import { ConfigModal } from './components/ConfigModal'
+import { Footer } from './components/Footer'
 
-function App() {
- 
+import { useSelector } from 'react-redux'
+import { modals } from './store/sliceModals'
+
+import GlobalStyle from './styles/global'
+
+const App = () => {
+  const { newItemModal, editModal, configModal } = useSelector(modals)
 
   return (
-    <>
-     <h1>Todo list</h1>
-     <NewItemModal/>
-     <ConfigModal/>
-     <Board/>
-     <Global/>
-    </>
+    <div className='App'>
+      {
+        newItemModal ?
+          <NewItemModal />
+          :
+          editModal ?
+            <EditModal />
+            :
+            configModal ?
+              <ConfigModal />
+              :
+              <>
+                <Board />
+                <Footer />
+              </>
+      }
+      <GlobalStyle />
+    </div>
   )
 }
 
