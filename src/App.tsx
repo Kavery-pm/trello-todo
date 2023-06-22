@@ -3,6 +3,7 @@ import './App.css'
 import { Board } from './components/Board'
 import Global from './styles/global'
 import { NewItemModal } from './components/NewItemModal'
+import { ConfigModal } from './components/ConfigModal'
 
 function App() {
  
@@ -11,6 +12,7 @@ function App() {
     <>
      <h1>Todo list</h1>
      <NewItemModal/>
+     <ConfigModal/>
      <Board/>
      <Global/>
     </>
