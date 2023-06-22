@@ -3,8 +3,8 @@ import { Container, Box, Body, Buttons } from './styles'
 import { FaArrowLeft, FaRegEdit } from 'react-icons/fa'
 
 import { useDispatch } from 'react-redux'
-import { editItem, edit } from '../../Store/sliceLists'
-import { editModal } from '../../Store/sliceModals'
+import { editItem, edit } from '../../store/sliceLists'
+import { editModal } from '../../store/sliceModals'
 
 export const EditModal = () => {
   const [value, setValue] = useState(edit.value)
